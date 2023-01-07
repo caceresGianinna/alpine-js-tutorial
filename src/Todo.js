@@ -1,4 +1,3 @@
-
 document.addEventListener("alpine:init", () => {
     Alpine.data("Header", () => ({ 
       // start with default theme : light
@@ -41,7 +40,6 @@ document.addEventListener("alpine:init", () => {
             completed: false
           }
         ];
-        // console.log(this.todos);
       },
   
       removeTodo(itemID) {
