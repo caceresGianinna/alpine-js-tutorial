@@ -16,16 +16,20 @@ document.addEventListener("alpine:init", () => {
     }));
   
     Alpine.data("Todo", () => ({
-      todos: [
-        {
-          id: 0,
-          text: "Jog around the park",
-          completed: false
-        }
-      ],
+      todos: [ ],
   
       getTodos() {
         return this.todos;
+      },
+
+      markComplete(todoId) {
+        this.todos = this.todos.map((todo, index) => {
+          if (todo.id === todoId) {
+            return {...todo , completed: !todo.completed };
+          } else {
+            return todo;
+          };
+        });
       },
   
       addTodo(item) {
@@ -37,6 +41,7 @@ document.addEventListener("alpine:init", () => {
             completed: false
           }
         ];
+        // console.log(this.todos);
       },
   
       removeTodo(itemID) {

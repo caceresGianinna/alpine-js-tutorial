@@ -58,19 +58,20 @@ The designs were created to the following widths:
   /* light */
   --white: #fff;
   --black: #000;
+  --bright-blue: hsl(220, 98%, 61%);
   --very-light-gray: hsl(0, 0%, 98%);
   --very-light-grayish-blue: hsl(236, 33%, 92%);
   --light-grayish-blue: hsl(233, 11%, 84%);
   --dark-grayish-blue: hsl(236, 9%, 61%);
-  --very-dark-grayish-blue: hsl(235, 19%, 35%)  ;
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
 
-  /* dark */ 
+  /* dark */
   --very-dark-blue: hsl(235, 21%, 11%);
-  --very-dark-desaturated-blue:  hsl(235, 24%, 19%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
   --light-grayish-blue: hsl(234, 39%, 85%);
-  --light-grayish-blue--hover:  hsl(236, 33%, 92%);
-  --dark-grayish-blue: hsl(234, 11%, 52%);  
-  --darker-grayish-blue: hsl(233, 14%, 35%);;
+  --light-grayish-blue--hover: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --darker-grayish-blue: hsl(233, 14%, 35%);
   --darkest-grayish-blue: hsl(237, 14%, 26%);
 
   /* typography */
@@ -84,7 +85,9 @@ The designs were created to the following widths:
   --body-background-color: var(--light-grayish-blue);
   --section-background-color: var(--white);
   --header-background-image-sm: url(../images/bg-mobile-light.jpg);
-  --heading-color: var(--white)
+  --heading-color: var(--white);
+  --header-background-image-md: url(../images/bg-desktop-light.jpg);
+
 }
 
 [data-theme="dark"] {
@@ -92,6 +95,7 @@ The designs were created to the following widths:
   --section-background-color: var(--darker-grayish-blue);
   --root__font-color: var(--white);
   --header-background-image-sm: url(../images/bg-mobile-dark.jpg);
+  --header-background-image-md: url(../images/bg-desktop-dark.jpg);
 }
 
 body {
@@ -101,12 +105,7 @@ body {
   color: var(--root__font-color);
 }
 
-
-
 header {
-  /* display: flex;
-  text-transform: uppercase;
-  flex-direction: row; */
   background-image: var(--header-background-image-sm);
   background-size: cover;
   height: 40vh;
@@ -127,14 +126,20 @@ button {
 }
 
 input[type="text"] {
+  box-sizing: border-box;
   padding: 1rem;
   font-size: 16px;
-  width: 90%;
-  border:1px solid var(--section-background-color);
+  width: 100%;
+  border: 1px solid var(--section-background-color);
   background-color: var(--section-background-color);
   color: var(--root__font-color);
   font-family: var(--root__font-family);
   border-radius: 10px;
+}
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
+  color: var(--root__font-color);
 }
 
 input[type="checkbox"] {
@@ -147,14 +152,14 @@ input[type="checkbox"] {
   border: none;
   cursor: pointer;
   overflow: hidden;
-  color: var(--root__font-color) ;
+  color: var(--root__font-color);
 }
 
 .todo__delete-btn {
   margin-left: auto;
 }
 
-.todo__wrapper { 
+.todo__wrapper {
   transform: translateY(-35px);
   margin: 0 2rem;
   border-radius: 10px;
@@ -180,6 +185,7 @@ input[type="checkbox"] {
   width: 40px;
   display: block;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .todo__icon--light {
@@ -203,4 +209,36 @@ input[type="checkbox"] {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.todo__item-wrapper:hover,
+.todo__item-wrapper:active {
+  background-color: var(--light-grayish-blue);
+}
+
+input[type=checkbox]+label {
+  cursor: pointer;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .todo__wrapper {
+    width: 50%;
+    margin: auto;
+  }
+
+  .todo__form-wrapper {
+    margin: auto;
+    width: 50%;
+  }
+
+  header {
+    background-image: var(--header-background-image-md);
+  }
+
+  .todo__header {
+    margin: auto;
+    width: 50%;
+  }
+
 }

@@ -14,7 +14,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
   <script defer src="https://unpkg.com/alpinejs@3.9.1/dist/cdn.min.js"></script>
-  <script src="./src/Todo.js"></script>
+  <script src="./src/todo.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -53,22 +53,27 @@
     </header>
     <section class="todo__wrapper">
  
-  
       <div x-data="Todo" @notify.window="addTodo($event.detail)">
-        <template x-for="todo in todos">
-          <div class="todo__item-wrapper">
-            <input id="todoItem" class="checkbox" type="checkbox" x-model="todo.completed">
+        <template x-for="todo in todos" >
+          <div class="todo__item-wrapper" >
+
+            <input :id="'todo-item' + todo.id"  
+             @change="markComplete(todo.id)" class="checkbox" type="checkbox">
+
             <label class="todo__item-label" 
               :class="todo.completed ? 'todo__item--completed' : ''" 
-              for="todoItem" 
+              :for="'todo-item' + todo.id" 
               x-text="todo.text">
             </label>
+
+
             <button 
-            class="button--clear todo__delete-btn"
-            aria-label="Delete todo"
-            @click="removeTodo(todo.id)">
+              class="button--clear todo__delete-btn"
+              aria-label="Delete todo"
+              @click="removeTodo(todo.id)">
               <span class="todo__icon todo__icon--cross"></span>
             </button>
+
           </div>
         </template>
        
@@ -81,6 +86,5 @@
       <button class="button--clear">Active</button>
       <button class="button--clear">Completed</button>
     </footer> -->
-
 </body>
 </html>
