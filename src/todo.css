@@ -211,10 +211,6 @@ input[type="checkbox"] {
   align-items: center;
 }
 
-.todo__item-wrapper:active {
-  background-color: var(--light-grayish-blue);
-}
-
 input[type=checkbox]+label {
   cursor: pointer;
   width: 100%;
