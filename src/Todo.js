@@ -23,7 +23,7 @@ document.addEventListener("alpine:init", () => {
       },
 
       markComplete(todoId) {
-        this.todos = this.todos.map((todo, index) => {
+        this.todos = this.todos.map((todo) => {
           if (todo.id === todoId) {
             return {...todo , completed: !todo.completed };
           } else {

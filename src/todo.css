@@ -211,7 +211,6 @@ input[type="checkbox"] {
   align-items: center;
 }
 
-.todo__item-wrapper:hover,
 .todo__item-wrapper:active {
   background-color: var(--light-grayish-blue);
 }

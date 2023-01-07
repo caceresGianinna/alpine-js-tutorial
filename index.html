@@ -8,23 +8,15 @@
   
   <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
   <script defer src="https://unpkg.com/alpinejs@3.9.1/dist/cdn.min.js"></script>
   <script src="./src/todo.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./vendors/css/normalize.css">
-  <!-- <link rel="stylesheet" href="./vendors/css/skeleton.css"> -->
   <link rel="stylesheet" href="./src/todo.css">
 </head>
 <body>
-
-
     <header x-data="Header">
       <div class="todo__header">
         <h1>Todo</h1>
@@ -45,7 +37,7 @@
       </div>
     
       <div x-data="Form" class="todo__form-wrapper">
-        <form action="#" @submit="$dispatch('notify',todoItem); todoItem=''">
+        <form action="#" @submit="$dispatch('notify', todoItem); todoItem=''">
           <input type="text" x-model="todoItem" placeholder="Create a new todo...">
         </form>
       </div>
@@ -80,6 +72,7 @@
       </div>
     
     </section>
+
 <!--   
     <footer>
       <button class="button--clear">All</button>
