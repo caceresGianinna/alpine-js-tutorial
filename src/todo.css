@@ -1,0 +1,206 @@
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Bright Blue: hsl(220, 98%, 61%)
+- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+
+### Neutral
+
+### Light Theme
+
+- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Grayish Blue: hsl(236, 33%, 92%)
+- Light Grayish Blue: hsl(233, 11%, 84%)
+- Dark Grayish Blue: hsl(236, 9%, 61%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%)
+
+### Dark Theme
+
+- Very Dark Blue: hsl(235, 21%, 11%)
+- Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+- Light Grayish Blue: hsl(234, 39%, 85%)
+- Light Grayish Blue (hover): hsl(236, 33%, 92%)
+- Dark Grayish Blue: hsl(234, 11%, 52%)
+- Very Dark Grayish Blue: hsl(233, 14%, 35%)
+- Very Dark Grayish Blue: hsl(237, 14%, 26%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 18px
+
+### Font
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weights: 400, 700
+ 
+
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+
+:root {
+  /* colors */
+  /* light */
+  --white: #fff;
+  --black: #000;
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%)  ;
+
+  /* dark */ 
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue:  hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue--hover:  hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);  
+  --darker-grayish-blue: hsl(233, 14%, 35%);;
+  --darkest-grayish-blue: hsl(237, 14%, 26%);
+
+  /* typography */
+  --root__font-family: 'Josefin Sans', sans-serif;
+  --root__font-weight-light: 400;
+  --root__font-weight-bold: 700;
+  --root__font-size-base: 1.125rem;
+  --root__font-color: var(--black);
+  --root__font-size-body: 1rem;
+
+  --body-background-color: var(--light-grayish-blue);
+  --section-background-color: var(--white);
+  --header-background-image-sm: url(../images/bg-mobile-light.jpg);
+  --heading-color: var(--white)
+}
+
+[data-theme="dark"] {
+  --body-background-color: var(--darkest-grayish-blue);
+  --section-background-color: var(--darker-grayish-blue);
+  --root__font-color: var(--white);
+  --header-background-image-sm: url(../images/bg-mobile-dark.jpg);
+}
+
+body {
+  font-size: var(--root__font-size-base);
+  font-family: var(--root__font-family);
+  background-color: var(--body-background-color);
+  color: var(--root__font-color);
+}
+
+
+
+header {
+  /* display: flex;
+  text-transform: uppercase;
+  flex-direction: row; */
+  background-image: var(--header-background-image-sm);
+  background-size: cover;
+  height: 40vh;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  font-weight: var(--root__font-weight-bold);
+  margin: 10px;
+  padding: 10px;
+  background-color: var(--section-background-color);
+  border-radius: 10px;
+}
+
+button {
+  margin: 5px;
+}
+
+input[type="text"] {
+  padding: 1rem;
+  font-size: 16px;
+  width: 90%;
+  border:1px solid var(--section-background-color);
+  background-color: var(--section-background-color);
+  color: var(--root__font-color);
+  font-family: var(--root__font-family);
+  border-radius: 10px;
+}
+
+input[type="checkbox"] {
+  margin: 1rem;
+}
+
+.button--clear {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--root__font-color) ;
+}
+
+.todo__delete-btn {
+  margin-left: auto;
+}
+
+.todo__wrapper { 
+  transform: translateY(-35px);
+  margin: 0 2rem;
+  border-radius: 10px;
+  background-color: var(--section-background-color);
+}
+
+.todo__form-wrapper {
+  margin: 0 2rem;
+  border-radius: 10px;
+}
+
+.todo__header {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem 2rem;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: var(--heading-color);
+}
+
+.todo__icon {
+  height: 40px;
+  width: 40px;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+.todo__icon--light {
+  background-image: url(../images/icon-sun.svg);
+}
+
+.todo__icon--dark {
+  background-image: url(../images/icon-moon.svg);
+}
+
+.todo__icon--cross {
+  background-image: url(../images/icon-cross.svg);
+}
+
+.todo__item--completed {
+  text-decoration: line-through;
+}
+
+.todo__item-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
